@@ -123,6 +123,13 @@ html {
 .create-task-item:last-child {
   margin-top: 40px;
 }
+.create-task-item:last-child label {
+  font-size: 11px;
+  line-height: normal;
+  font-weight: 400;
+  word-spacing: normal;
+  font-family: 'Courier New', Courier, monospace;
+}
 .create-task input[type='text'] {
   width: 100%;
   padding: 10px 20px;
