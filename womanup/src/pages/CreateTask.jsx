@@ -8,14 +8,17 @@ import { v4 as uuid } from 'uuid';
 dayjs.extend(customParseFormat);
 
 export const CreateTask = () => {
+  // функция изменения стейта задач
   const { onClickSetTasks } = React.useContext(AppContext);
-
+  // сотсояния всех полей формы
   const [header, setHeader] = React.useState('');
   const [date, setDate] = React.useState('');
   const [description, setDescription] = React.useState('');
   const [files, setFiles] = React.useState([]);
+  // статус валидности формы
   const [formValid, setFormValid] = React.useState(false);
 
+  // проверка формы при изменении обязательных полей
   React.useEffect(() => {
     const formValidation = () => {
       if (header && description && dayjs(date, 'DD.MM.YYYY').isValid()) {

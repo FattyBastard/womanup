@@ -7,14 +7,16 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 dayjs.extend(customParseFormat);
 
 export const EditTask = () => {
+  // функция редактирования задачи и текущий изменяемый объект
   const { onClickEditTasks, currentEditObject } = React.useContext(AppContext);
-
+  // сотсояния всех полей формы
   const [header, setHeader] = React.useState(currentEditObject.header);
   const [date, setDate] = React.useState(currentEditObject.date);
   const [description, setDescription] = React.useState(currentEditObject.description);
   const [files, setFiles] = React.useState(currentEditObject.files ? currentEditObject.files : []);
+  // статус валидности формы
   const [formValid, setFormValid] = React.useState(false);
-
+  // проверка формы при изменении обязательных полей
   React.useEffect(() => {
     const formValidation = () => {
       if (header && description && dayjs(date, 'DD.MM.YYYY').isValid()) {

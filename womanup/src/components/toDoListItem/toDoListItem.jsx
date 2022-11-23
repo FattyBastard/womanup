@@ -7,6 +7,7 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 dayjs.extend(customParseFormat);
 
 export const ToDoListItem = ({ header, date, description, id, files, status }) => {
+  //функция проверки актуальности даты
   const checkDate = (date) => {
     const currentTime = dayjs(dayjs().format('DD.MM.YYYY'), 'DD.MM.YYYY');
     const postTime = dayjs(date, 'DD.MM.YYYY');
@@ -17,6 +18,7 @@ export const ToDoListItem = ({ header, date, description, id, files, status }) =
   const { onClickDeleteTasks, setCurrentEditObject, onClickCompleteTask } =
     React.useContext(AppContext);
 
+  // осуществление проверки даты при активном статусе задачи
   if (status) {
     checkDate(date);
   }

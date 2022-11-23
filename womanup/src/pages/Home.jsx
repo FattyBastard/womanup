@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { AppContext } from '../components/app/App';
 
 export const Home = () => {
+  // стейт задач и контекста
   const { tasks } = React.useContext(AppContext);
-  tasks.map((task) => console.log(task.id));
+
   return (
     <div className="wrapper">
       <div className="wrapper-list">

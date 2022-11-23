@@ -48,11 +48,21 @@ html {
   border-radius: 10px;
 }
 
+@media (min-width: 525px) {
+  .button-area {
+    flex-direction: row !important;
+  }
+}
+
 .button-area {
   margin: 10px 10px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  flex-direction: column;
+  button {
+    margin-bottom: 5px;
+  }
 }
 .delete-btn {
   .btn();
